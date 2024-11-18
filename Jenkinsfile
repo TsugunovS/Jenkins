@@ -27,9 +27,6 @@ pipeline {
         stage('Run Tests') {
             steps {
                 script {
-                    // Запуск тестов внутри контейнера
-                    docker.image("${env.DOCKER_IMAGE}").inside {
-                        sh 'npm install'
                         sh 'npm test'
                     }
                 }
