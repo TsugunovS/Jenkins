@@ -19,10 +19,8 @@ pipeline {
         stage('Test') {
             steps {
                 script {
-                    // Запуск тестов внутри контейнера
-                    docker.image("${IMAGE_NAME}").inside {
-                        sh 'npm install'  // Установка зависимостей
-                        sh 'npm test'     // Запуск тестов
+                        sh 'npm install'  
+                        sh 'npm test'    
                     }
                 }
             }
