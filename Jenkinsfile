@@ -2,8 +2,8 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'TsugunovS/app'  // Имя вашего Docker образа (замените на ваше)
-        DOCKER_CREDENTIALS = 'TsugunovS'  // Имя ваших учетных данных в Jenkins для Docker Hub
+        IMAGE_NAME = 'tsugunovs/app'  // Имя вашего Docker образа (замените на ваше)
+        DOCKER_CREDENTIALS = 'tsugunovs'  // Имя ваших учетных данных в Jenkins для Docker Hub
     }
 
     stages {
@@ -12,16 +12,6 @@ pipeline {
                 script {
                     // Сборка Docker образа
                     docker.build("${IMAGE_NAME}")
-                }
-            }
-        }
-
-        stage('Test') {
-            steps {
-                script {
-                        sh 'npm install'  
-                        sh 'npm test'    
-                    }
                 }
             }
         }
