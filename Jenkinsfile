@@ -20,7 +20,7 @@ pipeline {
             steps {
                 script {
                     // Push образа в Docker Hub
-                    docker.withRegistry('https://hub.docker.com', "${DOCKER_CREDENTIALS}") {
+                    docker.withRegistry('https://index.docker.io/v1/', "${DOCKER_CREDENTIALS}") {
                         docker.image("${IMAGE_NAME}").push('latest')
                     }
                 }
