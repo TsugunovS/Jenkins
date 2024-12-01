@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        IMAGE_NAME = 'tsugunovs/app'  // Имя вашего Docker образа (замените на ваше)
+        IMAGE_NAME = 'tsugunovs/newapp'  // Имя вашего Docker образа (замените на ваше)
         DOCKER_CREDENTIALS = 'tsugunovs'  // Имя ваших учетных данных в Jenkins для Docker Hub
     }
 
